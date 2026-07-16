@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<title>Painel de Contratações — STIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A5C; --gray:#6B7684; --gray-light:#97A2AF;
+    --border:#E4E7EC; --cream:#F3F2ED; --bg:#F7F8FA; --white:#FFFFFF;
+    --arp:#1C5CA2; --arp-tint:#E7F1FB;
+    --lic:#2E7D32; --lic-tint:#E7F3E8;
+    --dir:#9C5A2B; --dir-tint:#F5EBE1;
+    --out:#6B7280; --out-tint:#EBEDF0;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; background:var(--bg); overscroll-behavior-y:contain;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    color:var(--navy); touch-action:manipulation; -webkit-text-size-adjust:100%;
+    padding-bottom: calc(24px + var(--safe-bottom));
+  }
+  .display{font-family:'Fraunces', Georgia, serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(247,248,250,0.92); backdrop-filter:blur(10px);
+    padding: calc(14px + var(--safe-top)) 16px 12px;
+    border-bottom:1px solid var(--border);
+  }
+  .h-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
+  h1{font-size:19px; font-weight:600; margin:0; line-height:1.2;}
+  .subtitle{font-size:11.5px; color:var(--gray); margin-top:3px; line-height:1.4;}
+  .sync-pill{
+    font-size:10.5px; font-weight:600; color:var(--arp); background:var(--arp-tint);
+    border-radius:999px; padding:5px 10px; white-space:nowrap; display:flex; align-items:center; gap:5px;
+    border:none; font-family:inherit; flex-shrink:0;
+  }
+  .sync-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--arp);}
+  .sync-pill.syncing .dot{animation:pulse 1s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:12px;}
+  .stat-chip{
+    background:var(--cream); color:var(--navy); border:1.5px solid transparent;
+    border-radius:10px; padding:8px 6px; display:flex; flex-direction:column; align-items:center;
+    cursor:pointer; font-family:inherit; text-align:center; transition:.15s; min-width:0;
+  }
+  .stat-chip .n{font-family:'Fraunces',serif; font-weight:600; font-size:17px; line-height:1; color:inherit;}
+  .stat-chip .l{font-size:9.5px; color:inherit; opacity:.78; margin-top:3px; line-height:1.15; white-space:normal; word-break:break-word;}
+  .stat-chip[data-mod="Adesão ARP"]{background:var(--arp-tint); color:var(--arp);}
+  .stat-chip[data-mod="Licitação"]{background:var(--lic-tint); color:var(--lic);}
+  .stat-chip[data-mod="Contratação Direta"]{background:var(--dir-tint); color:var(--dir);}
+  .stat-chip[data-mod="Outros processos"]{background:var(--out-tint); color:var(--out);}
+  .stat-chip.active{color:white; box-shadow:0 2px 8px rgba(27,58,92,0.18);}
+  .stat-chip.active[data-mod="todos"]{background:var(--navy);}
+  .stat-chip.active[data-mod="Adesão ARP"]{background:var(--arp);}
+  .stat-chip.active[data-mod="Licitação"]{background:var(--lic);}
+  .stat-chip.active[data-mod="Contratação Direta"]{background:var(--dir);}
+  .stat-chip.active[data-mod="Outros processos"]{background:var(--out);}
+
+  .fonte-row{display:flex; align-items:center; gap:8px; margin-top:10px; overflow-x:auto; scrollbar-width:none;}
+  .fonte-row::-webkit-scrollbar{display:none;}
+  .fonte-label{font-size:10.5px; color:var(--gray); flex-shrink:0; white-space:nowrap;}
+  .fonte-chip{
+    flex-shrink:0; border:1.5px solid var(--border); background:var(--white); color:var(--gray);
+    border-radius:999px; padding:5px 12px; font-size:11.5px; font-weight:600; font-family:inherit; cursor:pointer;
+  }
+  .fonte-chip.active{background:var(--navy); color:white; border-color:var(--navy);}
+
+  /* ---------- LIST ---------- */
+  .list{padding:14px 16px 0; display:flex; flex-direction:column; gap:12px; max-width:720px; margin:0 auto;}
+
+  .card{
+    background:var(--white); border:1px solid var(--border); border-radius:14px;
+    padding:14px 14px 14px 16px; position:relative; overflow:hidden;
+    box-shadow:0 1px 2px rgba(27,58,92,0.04);
+  }
+  .card::before{content:''; position:absolute; left:0; top:0; bottom:0; width:4px;}
+  .card[data-mod="Adesão ARP"]::before{background:var(--arp);}
+  .card[data-mod="Licitação"]::before{background:var(--lic);}
+  .card[data-mod="Contratação Direta"]::before{background:var(--dir);}
+  .card[data-mod="Outros processos"]::before{background:var(--out);}
+
+  .card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; cursor:pointer;}
+  .card-head-text{min-width:0; flex:1 1 auto;}
+  .card-title{font-size:15px; font-weight:700; line-height:1.25;}
+  .card-desc{font-size:12.5px; color:var(--gray); margin-top:2px; line-height:1.4;}
+  .updated-tag{
+    flex-shrink:0; background:#EEF1F6; border:1px solid #DCE2EC; border-radius:8px;
+    text-align:center; padding:4px 8px; min-width:64px;
+  }
+  .updated-tag .l{font-size:7px; color:var(--gray); letter-spacing:.03em;}
+  .updated-tag .d{font-size:12px; font-weight:700; color:var(--navy); margin-top:1px;}
+
+  .badge-row{display:flex; align-items:center; gap:8px; margin-top:11px;}
+  .badge{
+    flex:1; border-radius:999px; padding:7px 12px; font-size:12.5px; font-weight:700;
+  }
+  .card[data-mod="Adesão ARP"] .badge{background:var(--arp-tint); color:var(--arp);}
+  .card[data-mod="Licitação"] .badge{background:var(--lic-tint); color:var(--lic);}
+  .card[data-mod="Contratação Direta"] .badge{background:var(--dir-tint); color:var(--dir);}
+  .card[data-mod="Outros processos"] .badge{background:var(--out-tint); color:var(--out);}
+  .chev{color:var(--gray-light); transition:transform .2s; flex-shrink:0;}
+  .card.open .chev{transform:rotate(180deg);}
+
+  .bar-track{height:5px; border-radius:3px; background:#EAEDF1; margin-top:9px; overflow:hidden;}
+  .bar-fill{height:100%; border-radius:3px; transition:width .4s ease;}
+  .card[data-mod="Adesão ARP"] .bar-fill{background:var(--arp);}
+  .card[data-mod="Licitação"] .bar-fill{background:var(--lic);}
+  .card[data-mod="Contratação Direta"] .bar-fill{background:var(--dir);}
+  .card[data-mod="Outros processos"] .bar-fill{background:var(--out);}
+
+  .card-body{
+    max-height:0; overflow:hidden; transition:max-height .28s ease, opacity .2s ease, margin-top .28s ease;
+    opacity:0;
+  }
+  .card.open .card-body{max-height:600px; opacity:1; margin-top:11px;}
+  .status-text{font-size:13px; color:#45505C; line-height:1.5;}
+  .meta-line{font-size:11.5px; color:var(--gray); margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;}
+  .meta-line b{color:var(--gray);}
+  .meta-line.responsavel{margin-top:13px;}
+  .meta-line.local{margin-top:5px;}
+  .sei-link{
+    display:inline-flex; align-items:center; gap:4px; color:var(--arp); font-size:11.5px; font-weight:600;
+    text-decoration:none; margin-top:9px; font-family:'IBM Plex Mono', monospace;
+  }
+  .sei-link svg{width:11px; height:11px;}
+
+  footer.note{
+    max-width:720px; margin:20px auto 0; padding:0 16px; font-size:11px; color:var(--gray-light);
+    line-height:1.6; text-align:center;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-top">
+    <div>
+      <h1 class="display">Painel de Contratações</h1>
+      <div class="subtitle">STIC - TJES</div>
+    </div>
+    <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 15/07/2026 - 19:32</span></div>
+  </div>
+  <div class="stat-row" id="statRow"></div>
+  <div class="fonte-row" id="fonteRow"></div>
+</header>
+
+<div class="list" id="list"></div>
+
+<footer class="note">
+  Toque em um card para ver os detalhes e o link direto do processo no SEI.
+</footer>
+
+<script>
+const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedimento_trabalhar&id_procedimento=";
+
+const DEFAULTS = [
+  { id:"link-internet", mod:"Adesão ARP", nome:"Link de Internet", resumo:"Conectividade de acesso à internet de até 120 Gbps",
+    sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"SECR-GER", fonte:"Próprio", responsavel:"Richard Joanathan",
+    badge:"Pendências da SCI (7 pontos)", progresso:55,
+    status:"SCI aprova a adesão, mas condiciona a assinatura ao saneamento de 7 pontos: escopo, dimensionamento, minutas e limite global.", data:"15/07/2026 - 17:29" },
+  { id:"sdwan", mod:"Adesão ARP", nome:"SD-WAN", resumo:"Alta disponibilidade de links MPLS e Internet",
+    sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"Seção de Contratação", fonte:"BID", responsavel:"Robson Limaverde",
+    badge:"Enviado à Contratação", progresso:95,
+    status:"Reservas orçamentárias emitidas (2026NR00501-504); Alltech verificada e regular; segue para a Seção de Contratação.", data:"15/07/2026 - 17:46" },
+  { id:"entra-id", mod:"Adesão ARP", nome:"ENTRA-ID", resumo:"Substituição do ecossistema Novell e OpenText eDirectory",
+    sei:"7007301-69.2026.8.08.0000", idProc:"3474982", local:"SECR-GER", fonte:"BID", responsavel:"Márcio Flávio",
+    badge:"Termo para assinatura", progresso:70,
+    status:"Termo de Adesão à ARP da SEPLAG/MG na Secretaria Geral para assinatura; documento é procedimental, sem gerar obrigação contratual.", data:"09/07/2026 - 16:56" },
+  { id:"service-desk", mod:"Licitação", nome:"Service Desk", resumo:"Central de serviços de TI",
+    sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"STIC", fonte:"Próprio", responsavel:"Jeferson Mendes",
+    badge:"Equipe publicada", progresso:35,
+    status:"ATO nº 157/2026 publica a Equipe de Planejamento da Contratação.", data:"24/06/2026 - 11:32" },
+  { id:"soc", mod:"Licitação", nome:"SOC", resumo:"Centro de Operações de Segurança",
+    sei:"7006364-93.2025.8.08.0000", idProc:"2875391", local:"STIC", fonte:"BID", responsavel:"Robson Limaverde",
+    badge:"Pesquisas em análise", progresso:60,
+    status:"Compras encaminha pesquisas de preços (4 docs.) à STIC para análise de conformidade e Planilha Comparativa.", data:"08/07/2026 - 17:15" },
+  { id:"outsourcing", mod:"Licitação", nome:"Outsourcing de Impressão", resumo:"Serviço de impressão corporativa (outsourcing)",
+    sei:"7002289-11.2025.8.08.0000", idProc:"2680226", local:"SECR-GER", fonte:"Próprio", responsavel:"Jeferson Mendes",
+    badge:"Equipe republicada", progresso:28,
+    status:"ATO nº 168/2026 substitui a Equipe de Planejamento.", data:"06/07/2026 - 17:08" },
+  { id:"link-mpls", mod:"Contratação Direta", nome:"Link MPLS PRODEST", resumo:"Expansão do contrato atual de 67 para 130 locais",
+    sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"SECR-GER", fonte:"Próprio", responsavel:"Karina Marques",
+    badge:"Distrato solicitado", progresso:87,
+    status:"STIC solicitou à contratada as providências para distrato do CF006/2023, evitando sobreposição com o novo contrato.", data:"10/07/2026 - 14:51" },
+  { id:"colocation", mod:"Licitação", nome:"Hospedagem em Colocation", resumo:"Hospedagem de infraestrutura em data center (colocation)",
+    sei:"7008104-52.2026.8.08.0000", idProc:"3516106", local:"STIC", fonte:"Próprio", responsavel:"Robson Limaverde",
+    badge:"EPC publicada - urgência", progresso:45,
+    status:"Urgência por incidente elétrico no datacenter; EPC publicada (ATO 183/2026); segue ao Comitê do PCA.", data:"15/07/2026 - 18:03" },
+];
+
+const FONTE_ORDER = ["Próprio","BID"];
+let activeFonte = "Todos";
+
+const MOD_ORDER = ["Adesão ARP","Licitação","Contratação Direta","Outros processos"];
+let items = JSON.parse(JSON.stringify(DEFAULTS));
+let activeFilter = "Todos";
+function renderStats(){
+  const total = items.length;
+  const counts = {};
+  MOD_ORDER.forEach(m=>counts[m]=0);
+  items.forEach(i=>counts[i.mod]=(counts[i.mod]||0)+1);
+  const chips = [
+    {mod:'todos', n:total, l:'Processos'},
+    {mod:'Adesão ARP', n:counts["Adesão ARP"], l:'Adesão ARP'},
+    {mod:'Licitação', n:counts["Licitação"], l:'Licitação'},
+    {mod:'Contratação Direta', n:counts["Contratação Direta"], l:'Contr. Direta'},
+  ];
+  document.getElementById('statRow').innerHTML = chips.map(c=>{
+    const isActive = (c.mod==='todos' && activeFilter==='Todos') || c.mod===activeFilter;
+    return `<button class="stat-chip ${isActive?'active':''}" data-mod="${c.mod}" data-action="filter">
+      <div class="n">${c.n}</div><div class="l">${c.l}</div>
+    </button>`;
+  }).join('');
+  document.querySelectorAll('[data-action="filter"]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      activeFilter = btn.dataset.mod === 'todos' ? 'Todos' : btn.dataset.mod;
+      render();
+    });
+  });
+}
+
+function renderFonteFilter(){
+  const fontes = ["Todos", ...FONTE_ORDER];
+  document.getElementById('fonteRow').innerHTML =
+    `<span class="fonte-label">Fonte de recurso:</span>` +
+    fontes.map(f=>`<button class="fonte-chip ${f===activeFonte?'active':''}" data-fonte="${f}">${f}</button>`).join('');
+  document.querySelectorAll('.fonte-chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ activeFonte = btn.dataset.fonte; render(); });
+  });
+}
+
+// item.data pode vir como "DD/MM/AAAA" ou "DD/MM/AAAA - HH:MM"; exibe compacto sem repetir o ano
+function shortDateTime(dataRef) {
+  const [datePart, timePart] = dataRef.split(" - ");
+  const shortDate = datePart.slice(0, 5);
+  return timePart ? `${shortDate} - ${timePart}` : shortDate;
+}
+
+function cardHTML(item){
+  const filteredMod = activeFilter !== "Todos" && item.mod !== activeFilter;
+  const filteredFonte = activeFonte !== "Todos" && item.fonte !== activeFonte;
+  if(filteredMod || filteredFonte) return '';
+  return `
+  <div class="card" data-mod="${item.mod}" data-id="${item.id}">
+    <div class="card-head" data-action="toggle" data-id="${item.id}">
+      <div class="card-head-text">
+        <div class="card-title">${item.nome}</div>
+        <div class="card-desc">${item.resumo}</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+        <div class="updated-tag"><div class="l">ATUALIZAÇÃO</div><div class="d">${shortDateTime(item.data)}</div></div>
+        <svg class="chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+    <div class="badge-row">
+      <div class="badge">${item.badge}</div>
+    </div>
+    <div class="bar-track"><div class="bar-fill" style="width:${item.progresso}%"></div></div>
+
+    <div class="card-body">
+      <div class="status-text">${item.status}</div>
+      <div class="meta-line responsavel"><b>Responsável:</b> ${item.responsavel}</div>
+      <div class="meta-line local"><b>Local atual:</b> ${item.local}</div>
+      <a class="sei-link" target="_blank" rel="noopener" href="${SEI_BASE}${item.idProc}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.07 0l1.93-1.93a5 5 0 00-7.07-7.07L10.5 5.5"/><path d="M14 11a5 5 0 00-7.07 0L5 12.93a5 5 0 007.07 7.07L13.5 18.5"/></svg>
+        SEI ${item.sei}
+      </a>
+    </div>
+  </div>`;
+}
+
+function render(){
+  renderStats();
+  renderFonteFilter();
+  document.getElementById('list').innerHTML = items.map(cardHTML).join('');
+  attachHandlers();
+}
+
+function attachHandlers(){
+  document.querySelectorAll('[data-action="toggle"]').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const card = el.closest('.card');
+      card.classList.toggle('open');
+    });
+  });
+}
+
+render();
+</script>
+</body>
+</html>
