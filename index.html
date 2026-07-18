@@ -44,6 +44,13 @@
   }
   .sync-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--arp);}
   .sync-pill.syncing .dot{animation:pulse 1s infinite;}
+  .header-actions{display:flex; align-items:center; gap:6px; flex-shrink:0;}
+  .pdf-btn{
+    width:26px; height:26px; border-radius:50%; background:var(--arp-tint); color:var(--arp);
+    border:none; display:flex; align-items:center; justify-content:center; cursor:pointer;
+    flex-shrink:0; text-decoration:none;
+  }
+  .pdf-btn svg{width:13px; height:13px;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
   .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:12px;}
@@ -148,7 +155,12 @@
       <h1 class="display">Painel de Contratações</h1>
       <div class="subtitle">STIC - TJES</div>
     </div>
-    <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 17/07/2026 - 11:50</span></div>
+    <div class="header-actions">
+      <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+      </a>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 17/07/2026 - 11:50</span></div>
+    </div>
   </div>
   <div class="stat-row" id="statRow"></div>
   <div class="fonte-row" id="fonteRow"></div>
