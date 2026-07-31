@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 30/07/2026 - 12:28</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 31/07/2026 - 18:00</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -178,20 +178,20 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 const DEFAULTS = [
   { id:"link-internet", mod:"Adesão ARP", nome:"Link de Internet", resumo:"Conectividade de acesso à internet de até 120 Gbps",
     sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"SECR-GER", fonte:"Próprio", responsavel:"Richard Joanathan",
-    badge:"Pendências resolvidas", progresso:92,
-    status:"Área técnica respondeu às ressalvas do Controle Interno e encaminhou o processo para decisão da chefia.", data:"29/07/2026 - 10:57" },
+    badge:"Empenho autorizado", progresso:96,
+    status:"Empenho autorizado e processo segue para a área financeira.", data:"31/07/2026 - 17:35" },
   { id:"sdwan", mod:"Adesão ARP", nome:"SD-WAN", resumo:"Alta disponibilidade de links MPLS e Internet",
     sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"STIC", fonte:"BID", responsavel:"Robson Limaverde",
     badge:"Adesão autorizada", progresso:95,
     status:"Adesão à ata autorizada, com pendências a resolver, incluindo confirmação com o órgão gerenciador sobre ajuste de quantitativo.", data:"29/07/2026 - 11:17" },
   { id:"entra-id", mod:"Adesão ARP", nome:"ENTRA-ID", resumo:"Substituição do ecossistema Novell e OpenText eDirectory",
     sei:"7007301-69.2026.8.08.0000", idProc:"3474982", local:"STIC", fonte:"BID", responsavel:"Márcio Flávio",
-    badge:"Termo assinado, aguarda anuência", progresso:72,
-    status:"Termo de adesão foi assinado e enviado ao órgão gerenciador para análise da anuência.", data:"22/07/2026 - 10:44" },
+    badge:"ETP aprovado", progresso:72,
+    status:"Estudo Técnico Preliminar foi formalmente aprovado e ratificado, e o processo segue seu andamento normal.", data:"22/07/2026 - 12:23" },
   { id:"service-desk", mod:"Licitação", nome:"Service Desk", resumo:"Central de serviços de TI",
     sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"STIC", fonte:"Próprio", responsavel:"Jeferson Mendes",
     badge:"TR finalizado - ajustes da SCI", progresso:55,
-    status:"ETP e Termo de Referência finalizados. STIC ajustando considerações feitas pela SCI.", data:"28/07/2026 - 19:25" },
+    status:"ETP e Termo de Referência finalizados. STIC ajustando considerações feitas pela SCI.", data:"30/07/2026 - 15:11" },
   { id:"soc", mod:"Licitação", nome:"SOC", resumo:"Centro de Operações de Segurança",
     sei:"7006364-93.2025.8.08.0000", idProc:"2875391", local:"Assessoria Jurídica", fonte:"BID", responsavel:"Robson Limaverde",
     badge:"Nova minuta na Jurídica", progresso:55,
@@ -201,17 +201,17 @@ const DEFAULTS = [
     badge:"Confecção de artefatos", progresso:35,
     status:"Em etapa de confecção dos artefatos de contratação.", data:"08/07/2026 - 13:17" },
   { id:"link-mpls", mod:"Contratação Direta", nome:"Link MPLS PRODEST", resumo:"Expansão do contrato atual de 67 para 130 locais",
-    sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"SECR-GER", fonte:"Próprio", responsavel:"Karina Marques",
-    badge:"Recurso confirmado", progresso:92,
-    status:"Confirmada disponibilidade orçamentária para a contratação; processo segue para a próxima etapa.", data:"28/07/2026 - 18:42" },
+    sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"Gabinete Corregedor", fonte:"Próprio", responsavel:"Karina Marques",
+    badge:"Empenho solicitado", progresso:95,
+    status:"Solicitado empenho para a contratação, seguindo para autorização.", data:"31/07/2026 - 16:09" },
   { id:"cabeamento", mod:"Licitação", nome:"Cabeamento Estruturado", resumo:"2ª etapa da infraestrutura de cabeamento estruturado",
     sei:"7008191-08.2026.8.08.0000", idProc:"3519541", local:"Coordenação de Programas", fonte:"BID", responsavel:"Márcio Flávio",
     badge:"Etapa de abertura", progresso:10,
     status:"Processo em Etapa de Abertura na Unidade de Coordenação de Programas (UCP).", data:"13/07/2026 - 15:44" },
   { id:"erp", mod:"Licitação", nome:"Contratação ERP", resumo:"Sistema integrado de gestão (ERP)",
-    sei:"7012213-46.2025.8.08.0000", idProc:"3164789", local:"Assessoria Jurídica", fonte:"BID", responsavel:"David Andrade",
-    badge:"Reenviado ao Jurídico", progresso:55,
-    status:"Pendência documental foi sanada e o processo retornou para nova análise jurídica antes de seguir.", data:"29/07/2026 - 11:27" },
+    sei:"7012213-46.2025.8.08.0000", idProc:"3164789", local:"Comissão de Licitação", fonte:"BID", responsavel:"David Andrade",
+    badge:"AJ aprovou c/ ressalvas", progresso:60,
+    status:"Análise jurídica aprovada com ressalvas; unidade técnica deve fazer ajustes pontuais antes de enviar a proposta às empresas concorrentes.", data:"30/07/2026 - 13:28" },
   { id:"colocation", mod:"Licitação", nome:"Hospedagem em Colocation", resumo:"Hospedagem de infraestrutura em data center (colocation)",
     sei:"7008104-52.2026.8.08.0000", idProc:"3516106", local:"SECR-GER", fonte:"Próprio", responsavel:"Robson Limaverde",
     badge:"Equipe de Planejamento publicada", progresso:55,
