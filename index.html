@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 04/08/2026 - 11:15</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 04/08/2026 - 18:50</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,33 +177,33 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
   { id:"link-internet", mod:"Adesão ARP", nome:"Link de Internet", resumo:"Conectividade de acesso à internet de até 120 Gbps",
-    sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"SEC. CONTRATAÇÃO", fonte:"Próprio", responsavel:"Richard Joanathan",
-    badge:"Notas de empenho assinadas", progresso:98,
-    status:"Notas de empenho foram assinadas e o processo segue para a próxima etapa.", data:"31/07/2026 - 19:16" },
+    sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"SECR-GER", fonte:"Próprio", responsavel:"Richard Joanathan",
+    badge:"Contratos p/ assinatura", progresso:99,
+    status:"Contratos preparados e disponibilizados para assinatura.", data:"04/08/2026 - 16:43" },
   { id:"sdwan", mod:"Adesão ARP", nome:"SD-WAN", resumo:"Alta disponibilidade de links MPLS e Internet",
-    sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"STIC", fonte:"BID", responsavel:"Robson Limaverde",
-    badge:"Adesão autorizada", progresso:95,
-    status:"Adesão à ata autorizada, com pendências a resolver, incluindo confirmação com o órgão gerenciador sobre ajuste de quantitativo.", data:"03/08/2026 - 23:36" },
+    sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"Seção de Empenho", fonte:"BID", responsavel:"Robson Limaverde",
+    badge:"Ajuste orçamentário concluído", progresso:93,
+    status:"Ajuste orçamentário e contábil realizado, sem alteração no valor ou objeto da contratação.", data:"04/08/2026 - 17:20" },
   { id:"entra-id", mod:"Adesão ARP", nome:"ENTRA-ID", resumo:"Substituição do ecossistema Novell e OpenText eDirectory",
     sei:"7007301-69.2026.8.08.0000", idProc:"3474982", local:"Unidade Coord. de Programas", fonte:"BID", responsavel:"Márcio Flávio",
     badge:"ETP aprovado", progresso:72,
     status:"Estudo Técnico Preliminar foi formalmente aprovado e ratificado, e o processo segue seu andamento normal.", data:"30/07/2026 - 14:56" },
   { id:"service-desk", mod:"Licitação", nome:"Service Desk", resumo:"Central de serviços de TI",
-    sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"Assessoria Jurídica", fonte:"Próprio", responsavel:"Jeferson Mendes",
-    badge:"Coleta de preços em curso", progresso:60,
-    status:"STIC atendeu às considerações da SCI e encaminhou o processo para coleta de preços, subsidiando a elaboração do ETP.", data:"30/07/2026 - 15:11" },
+    sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"SECR-GER", fonte:"Próprio", responsavel:"Jeferson Mendes",
+    badge:"ETP na chefia p/ aprovação", progresso:65,
+    status:"Estudo Técnico Preliminar concluído e submetido à aprovação da chefia para dar continuidade ao planejamento da contratação.", data:"04/08/2026 - 15:51" },
   { id:"soc", mod:"Licitação", nome:"SOC", resumo:"Centro de Operações de Segurança",
     sei:"7006364-93.2025.8.08.0000", idProc:"2875391", local:"SECR-GER", fonte:"BID", responsavel:"Robson Limaverde",
-    badge:"Minuta aprovada c/ ressalvas", progresso:72,
-    status:"Minuta de edital aprovada com ressalvas técnicas; área responsável fará ajustes antes da publicação.", data:"03/08/2026 - 19:05" },
+    badge:"Fase externa autorizada", progresso:85,
+    status:"Autorizada abertura da fase externa do pregão, condicionada à correção de pontos indicados pelo jurídico antes da publicação do edital.", data:"04/08/2026 - 18:23" },
   { id:"outsourcing", mod:"Licitação", nome:"Outsourcing de Impressão", resumo:"Serviço de impressão corporativa (outsourcing)",
     sei:"7002289-11.2025.8.08.0000", idProc:"2680226", local:"SECR-GER", fonte:"Próprio", responsavel:"Jeferson Mendes",
     badge:"Confecção de artefatos", progresso:35,
     status:"Em etapa de confecção dos artefatos de contratação.", data:"31/07/2026 - 15:45" },
   { id:"link-mpls", mod:"Contratação Direta", nome:"Link MPLS PRODEST", resumo:"Expansão do contrato atual de 67 para 130 locais",
-    sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"SECR-GER", fonte:"Próprio", responsavel:"Karina Marques",
-    badge:"Empenho solicitado", progresso:95,
-    status:"Solicitado empenho para a contratação, seguindo para autorização.", data:"31/07/2026 - 16:09" },
+    sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"Seção de Empenho", fonte:"Próprio", responsavel:"Karina Marques",
+    badge:"Empenho autorizado", progresso:97,
+    status:"Todas as pendências foram superadas e o empenho da contratação foi autorizado.", data:"04/08/2026 - 17:40" },
   { id:"cabeamento", mod:"Licitação", nome:"Cabeamento Estruturado", resumo:"2ª etapa da infraestrutura de cabeamento estruturado",
     sei:"7008191-08.2026.8.08.0000", idProc:"3519541", local:"Coordenação de Programas", fonte:"BID", responsavel:"Márcio Flávio",
     badge:"Etapa de abertura", progresso:10,
@@ -211,7 +211,7 @@ const DEFAULTS = [
   { id:"erp", mod:"Licitação", nome:"Contratação ERP", resumo:"Sistema integrado de gestão (ERP)",
     sei:"7012213-46.2025.8.08.0000", idProc:"3164789", local:"Comissão Especial de Licitação (BID)", fonte:"BID", responsavel:"David Andrade",
     badge:"SDP enviada à lista curta", progresso:80,
-    status:"Parecer jurídico aprovou o prosseguimento, autorizando o envio da proposta às empresas concorrentes.", data:"03/08/2026 - 17:36" },
+    status:"Parecer jurídico aprovou o prosseguimento, autorizando o envio da proposta às empresas concorrentes.", data:"03/08/2026 - 18:29" },
   { id:"colocation", mod:"Licitação", nome:"Hospedagem em Colocation", resumo:"Hospedagem de infraestrutura em data center (colocation)",
     sei:"7008104-52.2026.8.08.0000", idProc:"3516106", local:"STIC", fonte:"Próprio", responsavel:"Robson Limaverde",
     badge:"Equipe de Planejamento publicada", progresso:55,
