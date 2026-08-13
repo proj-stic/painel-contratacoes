@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 12/08/2026 - 01:13</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 13/08/2026 - 09:55</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,25 +177,25 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
   { id:"link-internet", mod:"Adesão ARP", nome:"Link de Internet", resumo:"Conectividade de acesso à internet de até 120 Gbps",
-    sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"SECR-GER", fonte:"Próprio", responsavel:"Richard Joanathan",
-    badge:"Contratos p/ assinatura", progresso:99,
-    status:"Contratos preparados e disponibilizados para assinatura.", data:"04/08/2026 - 16:43" },
+    sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"Seção de Contratos e Convênios", fonte:"Próprio", responsavel:"Richard Joanathan",
+    badge:"Aguarda garantia contratual", progresso:99,
+    status:"Contratos assinados pela chefia e encaminhados aos fornecedores para providenciar a garantia contratual antes da assinatura final.", data:"06/08/2026 - 15:14" },
   { id:"sdwan", mod:"Adesão ARP", nome:"SD-WAN", resumo:"Alta disponibilidade de links MPLS e Internet",
-    sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"SECR-GER", fonte:"BID", responsavel:"Robson Limaverde",
-    badge:"Aguarda decisão da chefia", progresso:96,
-    status:"Consolidadas as respostas às pendências identificadas pelos órgãos de controle; processo aguarda decisão da chefia para prosseguir.", data:"07/08/2026 - 13:54" },
+    sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"STIC", fonte:"BID", responsavel:"Robson Limaverde",
+    badge:"Prosseguimento autorizado", progresso:97,
+    status:"Autorizado prosseguimento do processo, com pendências pontuais a resolver antes da assinatura do contrato.", data:"13/08/2026 - 09:36" },
   { id:"entra-id", mod:"Adesão ARP", nome:"ENTRA-ID", resumo:"Substituição do ecossistema Novell e OpenText eDirectory",
     sei:"7007301-69.2026.8.08.0000", idProc:"3474982", local:"Unidade Coord. de Programas", fonte:"BID", responsavel:"Márcio Flávio",
-    badge:"ETP aprovado", progresso:72,
-    status:"Estudo Técnico Preliminar foi formalmente aprovado e ratificado, e o processo segue seu andamento normal.", data:"30/07/2026 - 14:56" },
+    badge:"Formulário devolvido", progresso:78,
+    status:"Preenchidas informações solicitadas pelo órgão gerenciador; formulário devolvido para finalizar a anuência.", data:"30/07/2026 - 14:56" },
   { id:"service-desk", mod:"Licitação", nome:"Service Desk", resumo:"Central de serviços de TI",
     sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"STIC", fonte:"Próprio", responsavel:"Jeferson Mendes",
     badge:"ETP aprovado", progresso:70,
     status:"Estudo Técnico Preliminar aprovado; processo autorizado a prosseguir para as próximas etapas de planejamento.", data:"05/08/2026 - 10:30" },
   { id:"soc", mod:"Licitação", nome:"SOC", resumo:"Centro de Operações de Segurança",
     sei:"7006364-93.2025.8.08.0000", idProc:"2875391", local:"Seção de Contratação", fonte:"BID", responsavel:"Robson Limaverde",
-    badge:"TR corrigido", progresso:88,
-    status:"Correção pontual no Termo de Referência, sem alteração no objeto da contratação.", data:"07/08/2026 - 19:00" },
+    badge:"Sessão pública marcada", progresso:90,
+    status:"Certificado o cumprimento das ressalvas do parecer jurídico; edital republicado e sessão pública marcada.", data:"12/08/2026 - 04:44" },
   { id:"outsourcing", mod:"Licitação", nome:"Outsourcing de Impressão", resumo:"Serviço de impressão corporativa (outsourcing)",
     sei:"7002289-11.2025.8.08.0000", idProc:"2680226", local:"SECR-GER", fonte:"Próprio", responsavel:"Jeferson Mendes",
     badge:"Confecção de artefatos", progresso:35,
