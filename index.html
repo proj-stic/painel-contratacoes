@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 15/09/2026 - 23:10</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 21/09/2026 - 01:35</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -178,8 +178,8 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 const DEFAULTS = [
   { id:"link-internet", mod:"Adesão ARP", nome:"Link de Internet", resumo:"Conectividade de acesso à internet de até 120 Gbps",
     sei:"7006076-14.2026.8.08.0000", idProc:"3430944", local:"Seção de Contratação", fonte:"Próprio", responsavel:"Richard Joanathan",
-    badge:"CF033 publicado, CF032 em tramitação", progresso:92,
-    status:"Publicado o resumo de um dos contratos de links de internet; outro segue em tramitação com fornecedora.", data:"09/09/2026 - 15:05" },
+    badge:"CF032 assinado, CF031 em tramitação", progresso:95,
+    status:"Contrato assinado por ambas as partes; segue para publicação, enquanto o último contrato do grupo ainda está em tramitação.", data:"19/09/2026 - 00:01" },
   { id:"sdwan", mod:"Adesão ARP", nome:"SD-WAN", resumo:"Alta disponibilidade de links MPLS e Internet",
     sei:"7006386-20.2026.8.08.0000", idProc:"3442372", local:"STIC", fonte:"BID", responsavel:"Robson Limaverde",
     badge:"Gestores designados", progresso:100,
@@ -189,9 +189,9 @@ const DEFAULTS = [
     badge:"OS emitida - em fornecimento", progresso:99,
     status:"Emitida ordem de serviço para início do fornecimento das licenças.", data:"04/09/2026 - 14:11" },
   { id:"service-desk", mod:"Licitação", nome:"Service Desk", resumo:"Central de serviços de TI",
-    sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"Seção de Compras", fonte:"Próprio", responsavel:"Jeferson Mendes",
-    badge:"Pesquisa de mercado em curso", progresso:72,
-    status:"Iniciada a pesquisa de mercado para a contratação.", data:"01/09/2026 - 07:37" },
+    sei:"7001769-17.2026.8.08.0000", idProc:"3243710", local:"STIC", fonte:"Próprio", responsavel:"Jeferson Mendes",
+    badge:"Análise técnica concluída", progresso:78,
+    status:"Concluída a análise técnica de compatibilidade das pesquisas de mercado; processo segue com a cotação de preços.", data:"16/09/2026 - 12:51" },
   { id:"soc", mod:"Licitação", nome:"SOC", resumo:"Centro de Operações de Segurança",
     sei:"7006364-93.2025.8.08.0000", idProc:"2875391", local:"Unidade Coord. de Programas", fonte:"BID", responsavel:"Robson Limaverde",
     badge:"Ajuste orçamentário concluído", progresso:96,
@@ -202,16 +202,20 @@ const DEFAULTS = [
     status:"Em etapa de confecção dos artefatos de contratação.", data:"31/07/2026 - 15:45" },
   { id:"link-mpls", mod:"Contratação Direta", nome:"Link MPLS PRODEST", resumo:"Expansão do contrato atual de 67 para 130 locais",
     sei:"7001098-91.2026.8.08.0000", idProc:"3214331", local:"Seção de Contratação", fonte:"Próprio", responsavel:"Karina Marques",
-    badge:"Encaminhado p/ publicação no PNCP", progresso:98,
-    status:"Indicados os responsáveis pela gestão do contrato e solicitada a publicação no portal oficial.", data:"10/09/2026 - 16:51" },
+    badge:"Gestores designados", progresso:100,
+    status:"Publicado ato de designação dos gestores e fiscal do contrato.", data:"21/09/2026 - 01:15" },
+  { id:"aquisicao-computadores", mod:"Adesão ARP", nome:"Aquisição de Computadores", resumo:"Modernização e ampliação da capacidade dos postos de trabalho",
+    sei:"7010877-70.2026.8.08.0000", idProc:"3650348", local:"STIC", fonte:"Próprio", responsavel:"João Luiz",
+    badge:"DOD aberto - EPC a instituir", progresso:15,
+    status:"Aberta demanda para aquisição de novos equipamentos de informática, visando modernizar os postos de trabalho.", data:"20/09/2026 - 20:58" },
   { id:"cabeamento", mod:"Licitação", nome:"Cabeamento Estruturado", resumo:"2ª etapa da infraestrutura de cabeamento estruturado",
-    sei:"7008191-08.2026.8.08.0000", idProc:"3519541", local:"Assessoria Jurídica", fonte:"BID", responsavel:"Márcio Flávio",
-    badge:"Minuta na Jurídica", progresso:93,
-    status:"Verificada habilitação da empresa fornecedora e elaborada minuta contratual; processo segue para análise jurídica.", data:"14/09/2026 - 18:19" },
+    sei:"7008191-08.2026.8.08.0000", idProc:"3519541", local:"SECR-GER", fonte:"BID", responsavel:"Márcio Flávio",
+    badge:"Risco ALTO - pendências", progresso:85,
+    status:"Controle Interno concluiu análise técnica, classificando o risco atual como ALTO e recomendando providências antes da assinatura.", data:"19/09/2026 - 18:26" },
   { id:"consultoria-ia", mod:"Contratação Direta", nome:"Consultoria Especializada IA", resumo:"Diagnóstico e apoio à implantação de IA no PJES",
-    sei:"7010071-35.2026.8.08.0000", idProc:"3613776", local:"Seção de Empenho", fonte:"BID", responsavel:"Karina Pereira",
-    badge:"Ajuste orçamentário em curso", progresso:35,
-    status:"Documentos técnicos validados, equipe de gestão indicada e ajuste orçamentário esclarecido.", data:"15/09/2026 - 15:57" },
+    sei:"7010071-35.2026.8.08.0000", idProc:"3613776", local:"Unidade Coord. de Programas", fonte:"BID", responsavel:"Karina Pereira",
+    badge:"Reserva orçamentária confirmada", progresso:55,
+    status:"Confirmada disponibilidade orçamentária para a contratação.", data:"17/09/2026 - 15:56" },
   { id:"colocation", mod:"Licitação", nome:"Hospedagem em Colocation", resumo:"Hospedagem de infraestrutura em data center (colocation)",
     sei:"7008104-52.2026.8.08.0000", idProc:"3516106", local:"STIC", fonte:"Próprio", responsavel:"Robson Limaverde",
     badge:"Equipe de Planejamento publicada", progresso:55,
