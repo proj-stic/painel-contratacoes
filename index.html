@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 08/10/2026 - 23:40</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 15/10/2026 - 00:10</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,6 +177,51 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
  {
+  "id": "solucao-grandes-midias-tjro",
+  "mod": "Outros processos",
+  "nome": "Solução Grandes Mídias TJRO",
+  "resumo": "Acordo de cooperação técnica para uso do Sistema de Mídias Processuais do TJRO",
+  "sei": "7004115-38.2026.8.08.0000",
+  "idProc": "3356441",
+  "local": "SECR-GER",
+  "fonte": "Próprio",
+  "responsavel": "Teófilo Dias",
+  "badge": "Aguarda autorização de compra",
+  "progresso": 30,
+  "status": "Reforçado o pedido urgente de materiais para guarda e envio seguro de provas digitais, agora com um caso concreto parado e uma orientação recente que exige esses materiais. Próximo passo: decisão da Secretaria Geral e da Presidência e levantamento de estoque pela área de infraestrutura.",
+  "data": "14/10/2026 - 16:12"
+ },
+ {
+  "id": "link-de-internet",
+  "mod": "Adesão ARP",
+  "nome": "Link de Internet",
+  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
+  "sei": "7006076-14.2026.8.08.0000",
+  "idProc": "3430944",
+  "local": "SECR-GER",
+  "fonte": "Próprio",
+  "responsavel": "Richard Joanathan",
+  "badge": "Garantia contábil registrada",
+  "progresso": 95,
+  "status": "Registro contábil da garantia contratual concluído e validado. O processo encerrou a etapa na área contábil. Próximo passo: retornar à área responsável para seguir com a execução.",
+  "data": "14/10/2026 - 14:05"
+ },
+ {
+  "id": "consultoria-especializada-ia",
+  "mod": "Contratação Direta",
+  "nome": "Consultoria especializada IA",
+  "resumo": "Diagnóstico e apoio à implantação de IA no PJES",
+  "sei": "7010724-37.2026.8.08.0000",
+  "idProc": "3644851",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Teófilo Dias",
+  "badge": "Contrato em assinatura",
+  "progresso": 90,
+  "status": "Contrato enviado à empresa para assinatura, com prazo de 5 dias úteis para devolução. Próximo passo: publicar o resumo após o retorno do contrato assinado.",
+  "data": "13/10/2026 - 12:27"
+ },
+ {
   "id": "service-desk",
   "mod": "Licitação",
   "nome": "Service Desk",
@@ -192,21 +237,6 @@ const DEFAULTS = [
   "data": "08/10/2026 - 23:09"
  },
  {
-  "id": "consultoria-especializada-ia",
-  "mod": "Contratação Direta",
-  "nome": "Consultoria especializada IA",
-  "resumo": "Diagnóstico e apoio à implantação de IA no PJES",
-  "sei": "7010724-37.2026.8.08.0000",
-  "idProc": "3644851",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Teófilo Dias",
-  "badge": "Minuta conferida",
-  "progresso": 85,
-  "status": "Minuta do contrato conferida e de acordo com as recomendações recebidas. Restam ajustes finais de preenchimento e a conferência da regularidade da contratada. Próximo passo: coletar as assinaturas.",
-  "data": "08/10/2026 - 18:41"
- },
- {
   "id": "cabeamento-estruturado-2-etapa",
   "mod": "Licitação",
   "nome": "Cabeamento Estruturado - 2ª Etapa",
@@ -220,36 +250,6 @@ const DEFAULTS = [
   "progresso": 98,
   "status": "Resumo do contrato publicado no Diário Oficial. A publicação no portal nacional está pendente de regularização cadastral, e a garantia contratual está em registro contábil. Próximo passo: concluir o registro e publicar no portal assim que o cadastro for regularizado.",
   "data": "07/10/2026 - 18:54"
- },
- {
-  "id": "link-de-internet",
-  "mod": "Adesão ARP",
-  "nome": "Link de Internet",
-  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
-  "sei": "7006076-14.2026.8.08.0000",
-  "idProc": "3430944",
-  "local": "Coordenação de Contabilidade",
-  "fonte": "Próprio",
-  "responsavel": "Richard Joanathan",
-  "badge": "Registro das garantias",
-  "progresso": 92,
-  "status": "Contratos autorizados e com resumo publicado. O processo está na área contábil para registro das garantias contratuais. Próximo passo: seguir para o início da execução.",
-  "data": "06/10/2026 - 16:53"
- },
- {
-  "id": "solucao-grandes-midias-tjro",
-  "mod": "Outros processos",
-  "nome": "Solução Grandes Mídias TJRO",
-  "resumo": "Acordo de cooperação técnica para uso do Sistema de Mídias Processuais do TJRO",
-  "sei": "7004115-38.2026.8.08.0000",
-  "idProc": "3356441",
-  "local": "CGTIC",
-  "fonte": "Próprio",
-  "responsavel": "Teófilo Dias",
-  "badge": "Análise da Presidência",
-  "progresso": 30,
-  "status": "O proponente apoiou a adoção da solução de repositório de provas digitais, com requisitos adicionais, e pediu a compra imediata de insumos de acondicionamento. Próximo passo: análise da Presidência e da Secretaria Geral.",
-  "data": "02/10/2026 - 19:01"
  },
  {
   "id": "link-mpls-prodest",
