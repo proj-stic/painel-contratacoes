@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 27/10/2026 - 00:18</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 29/10/2026 - 12:30</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,6 +177,21 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
  {
+  "id": "service-desk",
+  "mod": "Licitação",
+  "nome": "Service Desk",
+  "resumo": "Central de serviços de TI",
+  "sei": "7001769-17.2026.8.08.0000",
+  "idProc": "3243710",
+  "local": "Seção de Compras",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Em pesquisa de preços",
+  "progresso": 80,
+  "status": "Questionamento de empresa sobre o local da central de atendimento respondido pela área técnica; pesquisa de preços segue, com novo prazo para proposta.",
+  "data": "28/10/2026 - 18:36"
+ },
+ {
   "id": "cabeamento-estruturado-2-etapa",
   "mod": "Licitação",
   "nome": "Cabeamento Estruturado - 2ª Etapa",
@@ -188,7 +203,7 @@ const DEFAULTS = [
   "responsavel": "Márcio Flávio",
   "badge": "Publicação no PNCP bloqueada",
   "progresso": 98,
-  "status": "O contrato não pôde ser publicado no portal nacional por limitação do sistema de origem; a área técnica vai avaliar outra forma de publicar.",
+  "status": "Publicação do contrato no portal nacional impedida porque a licitação de origem está em plataforma de outro estado; caso enviado à área técnica para buscar alternativa.",
   "data": "26/10/2026 - 16:03"
  },
  {
@@ -203,7 +218,7 @@ const DEFAULTS = [
   "responsavel": "Richard Joanathan",
   "badge": "Aguarda autorização p/ PNCP",
   "progresso": 96,
-  "status": "Compras achou uma forma de publicar os contratos no portal nacional, apesar de uma falha no cadastro original, e aguarda autorização para concluir.",
+  "status": "Publicação dos contratos no portal nacional travada por falha no cadastro do órgão gerenciador; alternativa proposta aguarda manifestação e autorização.",
   "data": "22/10/2026 - 12:10"
  },
  {
@@ -220,66 +235,6 @@ const DEFAULTS = [
   "progresso": 35,
   "status": "A área de infraestrutura pediu, com prioridade, o levantamento do estoque de materiais para guarda de provas digitais e a compra do que faltar.",
   "data": "19/10/2026 - 13:36"
- },
- {
-  "id": "outsourcing-de-impressao",
-  "mod": "Licitação",
-  "nome": "Outsourcing de Impressão",
-  "resumo": "Serviço de impressão corporativa (outsourcing)",
-  "sei": "7002289-11.2025.8.08.0000",
-  "idProc": "2680226",
-  "local": "SECR-GER",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "ETP revisado pela EPC",
-  "progresso": 35,
-  "status": "A equipe de planejamento revisou o estudo técnico da contratação de impressão para retomar o processo após a anulação do pregão anterior.",
-  "data": "16/10/2026 - 13:30"
- },
- {
-  "id": "consultoria-especializada-ia",
-  "mod": "Contratação Direta",
-  "nome": "Consultoria especializada IA",
-  "resumo": "Diagnóstico e apoio à implantação de IA no PJES",
-  "sei": "7010724-37.2026.8.08.0000",
-  "idProc": "3644851",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Teófilo Dias",
-  "badge": "Contrato assinado e publicado",
-  "progresso": 92,
-  "status": "Contrato de consultoria assinado, conferido e com resumo publicado; segue para a designação dos responsáveis pelo acompanhamento.",
-  "data": "16/10/2026 - 13:11"
- },
- {
-  "id": "service-desk",
-  "mod": "Licitação",
-  "nome": "Service Desk",
-  "resumo": "Central de serviços de TI",
-  "sei": "7001769-17.2026.8.08.0000",
-  "idProc": "3243710",
-  "local": "COORD-COMPRAS-LIC-CONTR",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "Em pesquisa de preços",
-  "progresso": 80,
-  "status": "A área técnica respondeu à dúvida de um fornecedor sobre a exigência de local físico do atendimento, sem mudar o edital, e a pesquisa de preços segue.",
-  "data": "15/10/2026 - 16:06"
- },
- {
-  "id": "link-mpls-prodest",
-  "mod": "Contratação Direta",
-  "nome": "Link MPLS PRODEST",
-  "resumo": "Expansão do contrato atual de 67 para 130 locais",
-  "sei": "7001098-91.2026.8.08.0000",
-  "idProc": "3214331",
-  "local": "Seção de Empenho",
-  "fonte": "Próprio",
-  "responsavel": "Karina Marques",
-  "badge": "Contrato em execução",
-  "progresso": 100,
-  "status": "Contrato de conectividade assinado, publicado e com gestores designados; já está em execução.",
-  "data": "02/10/2026 - 10:59"
  },
  {
   "id": "aquisicao-de-computadores",
@@ -306,10 +261,10 @@ const DEFAULTS = [
   "local": "Unidade Coordenação de Programas",
   "fonte": "BID",
   "responsavel": "Robson Limaverde",
-  "badge": "Ajuste orçamentário concluído",
+  "badge": "Aguarda nova reserva",
   "progresso": 96,
-  "status": "Concluído ajuste orçamentário e contábil solicitado pelo órgão financiador, sem alteração no objeto da contratação.",
-  "data": "10/09/2026 - 17:48"
+  "status": "Reservas anteriores anuladas e recursos remanejados para a classificação correta; segue para nova reserva.",
+  "data": "11/09/2026 - 11:55"
  },
  {
   "id": "hospedagem-em-colocation",
@@ -325,6 +280,21 @@ const DEFAULTS = [
   "progresso": 55,
   "status": "ATO que designa a Equipe de Planejamento de Contratação (EPC) para a contratação de Colocation, Cloud e Suporte Técnico do PJES, publicado.",
   "data": "31/07/2026 - 11:39"
+ },
+ {
+  "id": "outsourcing-de-impressao",
+  "mod": "Licitação",
+  "nome": "Outsourcing de Impressão",
+  "resumo": "Serviço de impressão corporativa (outsourcing)",
+  "sei": "7002289-11.2025.8.08.0000",
+  "idProc": "2680226",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "ETP revisado pela EPC",
+  "progresso": 35,
+  "status": "Estudo técnico revisado após anulação da licitação anterior, com correção dos critérios que causaram a anulação; segue para o termo de referência e nova pesquisa de preços.",
+  "data": "06/07/2026 - 20:15"
  }
 ];
 
