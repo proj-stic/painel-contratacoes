@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 16/11/2026 - 01:00</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 16/11/2026 - 14:25</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -176,6 +176,21 @@
 const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedimento_trabalhar&id_procedimento=";
 
 const DEFAULTS = [
+ {
+  "id": "aquisicao-de-workstations",
+  "mod": "Licitação",
+  "nome": "Aquisição de Workstations",
+  "resumo": "Aquisição de workstations em processo próprio",
+  "sei": "7010877-70.2026.8.08.0000",
+  "idProc": "3650348",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Separação do processo",
+  "progresso": 10,
+  "status": "Devido à especificidade do objeto, o processo está em fase de ajuste: as workstations vão seguir neste processo separado das aquisições de desktops e notebooks.",
+  "data": "16/11/2026 - 13:00"
+ },
  {
   "id": "cabeamento-estruturado-2-etapa",
   "mod": "Licitação",
@@ -198,13 +213,28 @@ const DEFAULTS = [
   "resumo": "Centro de Operações de Segurança",
   "sei": "7006364-93.2025.8.08.0000",
   "idProc": "2875391",
-  "local": "Unidade Coordenação de Programas",
+  "local": "Equipe de Pregão",
   "fonte": "BID",
   "responsavel": "Robson Limaverde",
-  "badge": "Reservas ajustadas",
-  "progresso": 97,
-  "status": "As reservas foram ajustadas ao valor necessário para este ano, e o pedido foi atendido. A contratação segue normalmente.",
+  "badge": "Resposta aos recursos",
+  "progresso": 80,
+  "status": "Em fase de resposta de recursos das empresas desclassificadas.",
   "data": "13/11/2026 - 13:17"
+ },
+ {
+  "id": "prorrogacao-outsourcing-impressao",
+  "mod": "Outros processos",
+  "nome": "Prorrogação Outsourcing Impressão",
+  "resumo": "Prorrogação excepcional do contrato de impressão vigente",
+  "sei": "7000355-62.2018.8.08.0000",
+  "idProc": "7263",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Eduardo Leal",
+  "badge": "Pesquisa de preços",
+  "progresso": 45,
+  "status": "A área técnica contestou o pedido de reajuste da empresa e enviou ao jurídico. A prorrogação excepcional do contrato foi enviada para pesquisa de preços, com urgência.",
+  "data": "12/11/2026 - 16:48"
  },
  {
   "id": "outsourcing-de-impressao",
@@ -270,16 +300,16 @@ const DEFAULTS = [
   "id": "aquisicao-de-computadores",
   "mod": "Adesão ARP",
   "nome": "Aquisição de Computadores",
-  "resumo": "Modernização e ampliação da capacidade dos postos de trabalho",
-  "sei": "7010877-70.2026.8.08.0000",
-  "idProc": "3650348",
+  "resumo": "Renovação do parque de desktops e notebooks",
+  "sei": "7009967-43.2026.8.08.0000",
+  "idProc": "3609111",
   "local": "STIC",
   "fonte": "Próprio",
-  "responsavel": "João Luiz",
-  "badge": "DOD aberto - EPC a instituir",
-  "progresso": 15,
-  "status": "Aberta demanda para aquisição de novos equipamentos de informática, visando modernizar e ampliar a capacidade dos postos de trabalho.",
-  "data": "20/09/2026 - 20:58"
+  "responsavel": "Jeferson Mendes",
+  "badge": "ETP em elaboração",
+  "progresso": 20,
+  "status": "Documento da demanda corrigido e equipe de planejamento designada e publicada. Agora começam os estudos técnicos.",
+  "data": "08/10/2026 - 15:00"
  },
  {
   "id": "hospedagem-em-colocation",
