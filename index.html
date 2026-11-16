@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 08/11/2026 - 23:40</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 16/11/2026 - 01:00</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,36 +177,6 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
  {
-  "id": "service-desk",
-  "mod": "Licitação",
-  "nome": "Service Desk",
-  "resumo": "Central de serviços de TI",
-  "sei": "7001769-17.2026.8.08.0000",
-  "idProc": "3243710",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "Análise das cotações",
-  "progresso": 82,
-  "status": "Pesquisa de preços do Service Desk em andamento; área técnica deve analisar as cotações recebidas.",
-  "data": "08/11/2026 - 23:28"
- },
- {
-  "id": "link-de-internet",
-  "mod": "Adesão ARP",
-  "nome": "Link de Internet",
-  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
-  "sei": "7006076-14.2026.8.08.0000",
-  "idProc": "3430944",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Robson Limaverde",
-  "badge": "Publicação autorizada",
-  "progresso": 98,
-  "status": "Publicação alternativa dos contratos de links autorizada; área técnica deve cadastrá-los para divulgação no portal.",
-  "data": "06/11/2026 - 14:59"
- },
- {
   "id": "cabeamento-estruturado-2-etapa",
   "mod": "Licitação",
   "nome": "Cabeamento Estruturado - 2ª Etapa",
@@ -216,10 +186,70 @@ const DEFAULTS = [
   "local": "UCP",
   "fonte": "BID",
   "responsavel": "Márcio Flávio",
-  "badge": "Avalia reforço da reserva",
+  "badge": "Remanejamento da reserva",
   "progresso": 98,
-  "status": "Avaliação da viabilidade de reforçar a reserva do cabeamento ainda em 2026; primeiras frentes priorizadas no 1º Grau.",
-  "data": "29/10/2026 - 18:32"
+  "status": "O orçamento da contratação foi confirmado. Algumas reservas foram ajustadas para mudar o dinheiro de região, e falta concluir esse remanejamento.",
+  "data": "14/11/2026 - 20:08"
+ },
+ {
+  "id": "soc",
+  "mod": "Licitação",
+  "nome": "SOC",
+  "resumo": "Centro de Operações de Segurança",
+  "sei": "7006364-93.2025.8.08.0000",
+  "idProc": "2875391",
+  "local": "Unidade Coordenação de Programas",
+  "fonte": "BID",
+  "responsavel": "Robson Limaverde",
+  "badge": "Reservas ajustadas",
+  "progresso": 97,
+  "status": "As reservas foram ajustadas ao valor necessário para este ano, e o pedido foi atendido. A contratação segue normalmente.",
+  "data": "13/11/2026 - 13:17"
+ },
+ {
+  "id": "outsourcing-de-impressao",
+  "mod": "Licitação",
+  "nome": "Outsourcing de Impressão",
+  "resumo": "Serviço de impressão corporativa (outsourcing)",
+  "sei": "7002289-11.2025.8.08.0000",
+  "idProc": "2680226",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "ETP revisado p/ aprovação",
+  "progresso": 40,
+  "status": "O estudo técnico da nova contratação de impressão foi revisado para corrigir o problema que anulou a licitação anterior. Ele segue para aprovação superior e, depois, para a pesquisa de preços.",
+  "data": "12/11/2026 - 14:34"
+ },
+ {
+  "id": "link-de-internet",
+  "mod": "Adesão ARP",
+  "nome": "Link de Internet",
+  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
+  "sei": "7006076-14.2026.8.08.0000",
+  "idProc": "3430944",
+  "local": "Seção de Contratação",
+  "fonte": "Próprio",
+  "responsavel": "Robson Limaverde",
+  "badge": "Cadastro dos contratos",
+  "progresso": 98,
+  "status": "Foi autorizada uma forma alternativa de publicar os contratos enquanto o portal nacional não os aceita. Os gestores devem cadastrá-los no sistema interno para que apareçam no Portal da Transparência.",
+  "data": "11/11/2026 - 16:06"
+ },
+ {
+  "id": "service-desk",
+  "mod": "Licitação",
+  "nome": "Service Desk",
+  "resumo": "Central de serviços de TI",
+  "sei": "7001769-17.2026.8.08.0000",
+  "idProc": "3243710",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Reserva orçamentária",
+  "progresso": 85,
+  "status": "A pesquisa de preços foi concluída e aprovada. O próximo passo é pedir a reserva do orçamento.",
+  "data": "11/11/2026 - 11:37"
  },
  {
   "id": "solucao-grandes-midias-tjro",
@@ -228,13 +258,13 @@ const DEFAULTS = [
   "resumo": "Acordo de cooperação técnica para uso do Sistema de Mídias Processuais do TJRO",
   "sei": "7004115-38.2026.8.08.0000",
   "idProc": "3356441",
-  "local": "COORD-SUPRIM-CONTR-PATR",
+  "local": "Secretaria de Infraestrutura",
   "fonte": "Próprio",
   "responsavel": "Teófilo Dias",
-  "badge": "Levantamento de estoque",
+  "badge": "Aguarda análise técnica",
   "progresso": 35,
-  "status": "A área de infraestrutura pediu, com prioridade, o levantamento do estoque de materiais para guarda de provas digitais e a compra do que faltar.",
-  "data": "19/10/2026 - 13:36"
+  "status": "O estoque de materiais para guardar provas digitais foi levantado, mas atende muito pouco, e será preciso planejar uma compra. Na STIC, falta a análise técnica do sistema de mídias do TJRO.",
+  "data": "10/11/2026 - 12:53"
  },
  {
   "id": "aquisicao-de-computadores",
@@ -252,21 +282,6 @@ const DEFAULTS = [
   "data": "20/09/2026 - 20:58"
  },
  {
-  "id": "soc",
-  "mod": "Licitação",
-  "nome": "SOC",
-  "resumo": "Centro de Operações de Segurança",
-  "sei": "7006364-93.2025.8.08.0000",
-  "idProc": "2875391",
-  "local": "Unidade Coordenação de Programas",
-  "fonte": "BID",
-  "responsavel": "Robson Limaverde",
-  "badge": "Fase de recursos",
-  "progresso": 97,
-  "status": "Empresa vencedora habilitada na licitação do SOC; prazo de recursos aberto.",
-  "data": "11/09/2026 - 11:55"
- },
- {
   "id": "hospedagem-em-colocation",
   "mod": "Licitação",
   "nome": "Hospedagem em Colocation",
@@ -280,21 +295,6 @@ const DEFAULTS = [
   "progresso": 55,
   "status": "ATO que designa a Equipe de Planejamento de Contratação (EPC) para a contratação de Colocation, Cloud e Suporte Técnico do PJES, publicado.",
   "data": "31/07/2026 - 11:39"
- },
- {
-  "id": "outsourcing-de-impressao",
-  "mod": "Licitação",
-  "nome": "Outsourcing de Impressão",
-  "resumo": "Serviço de impressão corporativa (outsourcing)",
-  "sei": "7002289-11.2025.8.08.0000",
-  "idProc": "2680226",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "ETP enviado p/ aprovação",
-  "progresso": 38,
-  "status": "Estudo de viabilidade da contratação de impressão revisado e enviado para aprovação.",
-  "data": "06/07/2026 - 20:15"
  }
 ];
 
