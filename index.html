@@ -159,7 +159,7 @@
       <a class="pdf-btn" href="Painel_Contratacoes_STIC.pdf" target="_blank" rel="noopener" title="Abrir versão em PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
       </a>
-      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 16/11/2026 - 23:00</span></div>
+      <div class="sync-pill"><span class="dot"></span><span id="syncLabel">Status em 19/11/2026 - 00:05</span></div>
     </div>
   </div>
   <div class="stat-row" id="statRow"></div>
@@ -177,49 +177,79 @@ const SEI_BASE = "https://sistemas.tjes.jus.br/sei/controlador.php?acao=procedim
 
 const DEFAULTS = [
  {
-  "id": "service-desk",
-  "mod": "Licitação",
-  "nome": "Service Desk",
-  "resumo": "Central de serviços de TI",
-  "sei": "7001769-17.2026.8.08.0000",
-  "idProc": "3243710",
-  "local": "Seção de Empenho",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "Edital em elaboração",
-  "progresso": 60,
-  "status": "A reserva de orçamento foi emitida. Agora a área de contratação prepara o edital.",
-  "data": "16/11/2026 - 16:58"
- },
- {
-  "id": "aquisicao-de-workstations",
-  "mod": "Licitação",
-  "nome": "Aquisição de Workstations",
-  "resumo": "Aquisição de workstations em processo próprio",
-  "sei": "7010877-70.2026.8.08.0000",
-  "idProc": "3650348",
-  "local": "STIC",
-  "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "Separação do processo",
-  "progresso": 10,
-  "status": "Devido à especificidade do objeto, o processo está em fase de ajuste: as workstations vão seguir neste processo separado das aquisições de desktops e notebooks.",
-  "data": "16/11/2026 - 13:00"
- },
- {
   "id": "cabeamento-estruturado-2-etapa",
   "mod": "Licitação",
   "nome": "Cabeamento Estruturado - 2ª Etapa",
   "resumo": "2ª etapa da infraestrutura de cabeamento estruturado",
   "sei": "7008191-08.2026.8.08.0000",
   "idProc": "3519541",
-  "local": "UCP",
+  "local": "SECR-GER",
   "fonte": "BID",
   "responsavel": "Márcio Flávio",
-  "badge": "Remanejamento da reserva",
+  "badge": "Autorização do empenho",
   "progresso": 98,
-  "status": "O orçamento da contratação foi confirmado. Algumas reservas foram ajustadas para mudar o dinheiro de região, e falta concluir esse remanejamento.",
-  "data": "14/11/2026 - 20:08"
+  "status": "A reserva de orçamento foi reforçada, os pedidos de empenho foram emitidos e o processo foi para a Secretaria Geral autorizar.",
+  "data": "18/11/2026 - 19:14"
+ },
+ {
+  "id": "outsourcing-de-impressao",
+  "mod": "Licitação",
+  "nome": "Outsourcing de Impressão",
+  "resumo": "Serviço de impressão corporativa (outsourcing)",
+  "sei": "7002289-11.2025.8.08.0000",
+  "idProc": "2680226",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Ajuste de itens (CidadES)",
+  "progresso": 45,
+  "status": "O termo de referência foi enviado para pesquisa de preços. O processo voltou para a área técnica atualizar o cadastro dos itens no sistema estadual de contratações antes de a pesquisa seguir.",
+  "data": "18/11/2026 - 14:44"
+ },
+ {
+  "id": "aquisicao-de-computadores",
+  "mod": "Adesão ARP",
+  "nome": "Aquisição de Computadores",
+  "resumo": "Renovação do parque de desktops e notebooks",
+  "sei": "7009967-43.2026.8.08.0000",
+  "idProc": "3609111",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Pedido de adesão",
+  "progresso": 30,
+  "status": "O estudo técnico dos computadores foi concluído e recomenda aderir a atas de outros órgãos, com licitação própria para o que faltar. Agora vem o pedido formal de adesão e depois a pesquisa de preços.",
+  "data": "18/11/2026 - 10:18"
+ },
+ {
+  "id": "aquisicao-de-workstations",
+  "mod": "Adesão ARP",
+  "nome": "Aquisição de Workstations",
+  "resumo": "Workstations de alto desempenho para áreas técnicas",
+  "sei": "7010877-70.2026.8.08.0000",
+  "idProc": "3650348",
+  "local": "STIC",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Formalização da EPC",
+  "progresso": 25,
+  "status": "As workstations passaram a correr em processo próprio, com documento de demanda e estudo técnico concluídos. Agora falta formalizar a equipe neste processo e pedir a adesão à ata.",
+  "data": "18/11/2026 - 10:15"
+ },
+ {
+  "id": "service-desk",
+  "mod": "Licitação",
+  "nome": "Service Desk",
+  "resumo": "Central de serviços de TI",
+  "sei": "7001769-17.2026.8.08.0000",
+  "idProc": "3243710",
+  "local": "Seção de Contratação",
+  "fonte": "Próprio",
+  "responsavel": "Jeferson Mendes",
+  "badge": "Edital em elaboração",
+  "progresso": 60,
+  "status": "A área de finanças confirmou que há orçamento e enviou o processo para a área de contratação, que vai preparar o edital.",
+  "data": "17/11/2026 - 12:18"
  },
  {
   "id": "soc",
@@ -252,34 +282,19 @@ const DEFAULTS = [
   "data": "12/11/2026 - 16:48"
  },
  {
-  "id": "outsourcing-de-impressao",
+  "id": "contratacao-pacote-autodesk",
   "mod": "Licitação",
-  "nome": "Outsourcing de Impressão",
-  "resumo": "Serviço de impressão corporativa (outsourcing)",
-  "sei": "7002289-11.2025.8.08.0000",
-  "idProc": "2680226",
-  "local": "STIC",
+  "nome": "Contratação Pacote Autodesk",
+  "resumo": "Licenças Autodesk AEC Collection para a Engenharia",
+  "sei": "7011473-54.2026.8.08.0000",
+  "idProc": "3681583",
+  "local": "Coordenadoria de Projetos",
   "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "TR p/ aprovação",
-  "progresso": 45,
-  "status": "O novo termo de referência do serviço de impressão foi concluído pela equipe de planejamento. Agora ele precisa ser aprovado, e depois vem a pesquisa de preços.",
-  "data": "12/11/2026 - 14:34"
- },
- {
-  "id": "link-de-internet",
-  "mod": "Adesão ARP",
-  "nome": "Link de Internet",
-  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
-  "sei": "7006076-14.2026.8.08.0000",
-  "idProc": "3430944",
-  "local": "Seção de Contratação",
-  "fonte": "Próprio",
-  "responsavel": "Robson Limaverde",
-  "badge": "Cadastro dos contratos",
-  "progresso": 98,
-  "status": "Os resumos dos contratos foram publicados no Diário. Agora os gestores precisam cadastrar os contratos no sistema para que apareçam no Portal da Transparência.",
-  "data": "11/11/2026 - 16:06"
+  "responsavel": "Amina Moreira",
+  "badge": "ETP em elaboração",
+  "progresso": 15,
+  "status": "A contratação das licenças de engenharia foi autorizada e a equipe de planejamento foi designada e publicada. Agora começam os estudos técnicos.",
+  "data": "12/11/2026 - 10:54"
  },
  {
   "id": "solucao-grandes-midias-tjro",
@@ -297,19 +312,19 @@ const DEFAULTS = [
   "data": "10/11/2026 - 12:53"
  },
  {
-  "id": "aquisicao-de-computadores",
+  "id": "link-de-internet",
   "mod": "Adesão ARP",
-  "nome": "Aquisição de Computadores",
-  "resumo": "Renovação do parque de desktops e notebooks",
-  "sei": "7009967-43.2026.8.08.0000",
-  "idProc": "3609111",
-  "local": "STIC",
+  "nome": "Link de Internet",
+  "resumo": "Conectividade de acesso à internet de até 120 Gbps",
+  "sei": "7006076-14.2026.8.08.0000",
+  "idProc": "3430944",
+  "local": "Seção de Contratação",
   "fonte": "Próprio",
-  "responsavel": "Jeferson Mendes",
-  "badge": "ETP em elaboração",
-  "progresso": 20,
-  "status": "Documento da demanda corrigido e equipe de planejamento designada e publicada. Agora começam os estudos técnicos.",
-  "data": "08/10/2026 - 15:00"
+  "responsavel": "Robson Limaverde",
+  "badge": "Cadastro dos contratos",
+  "progresso": 98,
+  "status": "Os resumos dos contratos foram publicados no Diário. Agora os gestores precisam cadastrar os contratos no sistema para que apareçam no Portal da Transparência.",
+  "data": "06/11/2026 - 14:59"
  },
  {
   "id": "hospedagem-em-colocation",
@@ -321,7 +336,7 @@ const DEFAULTS = [
   "local": "STIC",
   "fonte": "Próprio",
   "responsavel": "Robson Limaverde",
-  "badge": "Equipe de Planejamento publicada",
+  "badge": "EPC designada",
   "progresso": 55,
   "status": "ATO que designa a Equipe de Planejamento de Contratação (EPC) para a contratação de Colocation, Cloud e Suporte Técnico do PJES, publicado.",
   "data": "31/07/2026 - 11:39"
@@ -332,6 +347,7 @@ const FONTE_ORDER = ["Próprio","BID"];
 let activeFonte = "Todos";
 
 const MOD_ORDER = ["Adesão ARP","Licitação","Contratação Direta","Outros processos"];
+const MOD_LABEL = {"Adesão ARP":"Adesão ARP","Licitação":"Licitação","Contratação Direta":"Contr. Direta","Outros processos":"Outros"};
 let items = JSON.parse(JSON.stringify(DEFAULTS));
 let activeFilter = "Todos";
 function renderStats(){
@@ -339,13 +355,9 @@ function renderStats(){
   const counts = {};
   MOD_ORDER.forEach(m=>counts[m]=0);
   items.forEach(i=>counts[i.mod]=(counts[i.mod]||0)+1);
-  const chips = [
-    {mod:'todos', n:total, l:'Processos'},
-    {mod:'Adesão ARP', n:counts["Adesão ARP"], l:'Adesão ARP'},
-    {mod:'Licitação', n:counts["Licitação"], l:'Licitação'},
-    {mod:'Contratação Direta', n:counts["Contratação Direta"], l:'Contr. Direta'},
-  ];
-  if(counts["Outros processos"]>0) chips.push({mod:'Outros processos', n:counts["Outros processos"], l:'Outros'});
+  // modalidade sem processos não aparece (mesma regra do painel em PDF)
+  const chips = [{mod:'todos', n:total, l:'Processos'},
+    ...MOD_ORDER.filter(m=>counts[m]>0).map(m=>({mod:m, n:counts[m], l:MOD_LABEL[m]}))];
   document.getElementById('statRow').style.setProperty('--cols', chips.length);
   document.getElementById('statRow').innerHTML = chips.map(c=>{
     const isActive = (c.mod==='todos' && activeFilter==='Todos') || c.mod===activeFilter;
